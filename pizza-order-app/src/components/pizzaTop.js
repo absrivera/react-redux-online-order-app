@@ -2,16 +2,13 @@ import React, { Fragment } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
-import { Button } from '@material-ui/core'
-
+//style object
 const useStyles = makeStyles(theme => ({
     formControl: {
         margin: theme.spacing(3),
@@ -22,6 +19,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+//defining pizza topping options
 const topOptions = {
     veggies: ['Mushrooms', 'Black Olives', 'Spinach', 'Bananna Peppers', 'Onion'],
     meats: ['Pepperoni', 'Bacon', 'Sausauge', 'Chicken'],
@@ -54,9 +52,6 @@ function PizzaTop({ handleTopChange }) {
                         )
                     })
                     }
-                    {/* <div>
-                    <Button type="submit" variant="contained" color="primary">Save</Button>
-                    </div> */}
                 </CardContent>
             </Card>
         </Fragment>

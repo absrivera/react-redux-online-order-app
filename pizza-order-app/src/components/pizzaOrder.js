@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import TabPanel from './tabPanel'
-import {useHistory} from 'react-router-dom'
+import { connect } from 'react-redux';
+import {useHistory} from 'react-router-dom' 
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -8,9 +8,10 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Button } from '@material-ui/core'
 
+import TabPanel from './tabPanel'
 import PizzaBase from './pizzaBase'
 import PizzaTop from './pizzaTop'
-import { connect } from 'react-redux';
+
 import { addOrder } from '../redux/actions/actions';
 
 const selectOptions = [
@@ -36,12 +37,13 @@ function PizzaOrder({ handleClick }) {
     })
 
     const [expanded, setExpanded] = useState(false);
-
+    
+    //changes which panel is expanded 
     const handleChange = panel => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
     };
 
-
+    //updates pizza state based on selected pizza base options
     const handleBaseChange = (e) => {
         const { name, value } = e.target
         console.log('baseChange' + value)
@@ -50,6 +52,7 @@ function PizzaOrder({ handleClick }) {
         )
     }
 
+    //updates pizza state based on selected pizza topping options
     const handleTopChange = (e) => {
         const { name, value } = e.target
         console.log(' topChange ' + value)
@@ -58,6 +61,7 @@ function PizzaOrder({ handleClick }) {
         )
     }
     
+    //move user to order review page while keeping redux state
     const handleNext = () =>{
         history.push('/review')
     }
@@ -104,6 +108,7 @@ function PizzaOrder({ handleClick }) {
     )
 }
 
+//mapping dispatch action to handleClick function prop
 const mapDispatchToProps = dispatch => ({
     handleClick(data) {
         return () => {
@@ -112,6 +117,7 @@ const mapDispatchToProps = dispatch => ({
     }
 })
 
+//connecting component to redux store
 export default connect(
     null,
     mapDispatchToProps

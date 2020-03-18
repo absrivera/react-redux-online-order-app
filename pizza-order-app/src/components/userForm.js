@@ -19,6 +19,7 @@ function UserForm({ handleSubmit }) {
         state: ''
     })
 
+    //updates user information based on input field values
     let handleChange = (e) => {
         const { name, value } = e.target
         update(
@@ -27,6 +28,7 @@ function UserForm({ handleSubmit }) {
 
     }
 
+    //moves user to order view
     const handleClick = () => {
         history.push('/order')
     }
@@ -50,6 +52,7 @@ function UserForm({ handleSubmit }) {
     )
 }
 
+//creates reduxForm from UserForm
 const Form = reduxForm({
     form: 'User'
 
@@ -57,6 +60,7 @@ const Form = reduxForm({
 
 export default connect(
 
+    //maps dispatch to onSubmit. reduxForm creates handleSubmit 
     dispatch => ({
         onSubmit: data => store.dispatch(addUser(data))
     })

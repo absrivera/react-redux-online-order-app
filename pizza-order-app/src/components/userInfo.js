@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box';
 
 import UserForm from './userForm'
 
-function UserInfo (props) {
+function UserInfo () {
         return (
             <Box justifyContent="center">
                 <TabPanel value='1' index='1'>

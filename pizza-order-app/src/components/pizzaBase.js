@@ -5,10 +5,10 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
+//style object
 const useStyles = makeStyles(theme => ({
     formControl: {
         margin: theme.spacing(4),
@@ -19,6 +19,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+//pizza options to be displayed 
 const baseOptions = {
     size: ['Small', 'Medium', 'Large'],
     crust: ['Plain', 'Garlic', 'Parmesan', 'Thin'],

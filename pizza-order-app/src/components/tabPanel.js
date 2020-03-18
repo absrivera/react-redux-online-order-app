@@ -4,7 +4,7 @@ import React from 'react'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
+  //returns children wrapped in typography component
     return (
       <Typography
         component="div"

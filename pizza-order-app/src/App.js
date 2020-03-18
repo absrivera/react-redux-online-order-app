@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+
+import Box from '@material-ui/core/Box';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,19 +12,14 @@ import {
   Link
 } from 'react-router-dom';
 
-
+//component imports
 import Home from './components/home'
 import User from './components/userInfo'
 import Order from './components/pizzaOrder'
 import Review from './components/orderReview'
 
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-
-import Box from '@material-ui/core/Box';
-
 function App() {
+  //link definitions
   const Links = [
     {
       'name': 'Home',
@@ -54,6 +53,7 @@ function App() {
             </Tabs>
           </AppBar>
 
+          {/* using react-router to switch between views */}
           <Switch>
             <Route path="/user">
               <User></User>

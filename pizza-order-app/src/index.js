@@ -7,6 +7,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
+    //store passed into provider to allow access to child components
     <Provider store={store}>
         <App />
     </Provider>,

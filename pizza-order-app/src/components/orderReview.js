@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import { Button } from '@material-ui/core'
 import Box from '@material-ui/core/Box';
 
+//displays the final order information
 class orderList extends React.Component {
 
     render() {
@@ -50,7 +51,9 @@ class orderList extends React.Component {
     }
 }
 
+//getting state from redux and assigning it to props
 const mapStateToProps = (state) => {
+    //unpacks redux state into iterable objects
     let userInfo = Object.entries(state.User)
     let orders = state.Pizza.orders
     let orderItems = []
@@ -65,7 +68,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-
+//connecting to redux
 const FinalOrder = connect(
     mapStateToProps
 )(orderList)

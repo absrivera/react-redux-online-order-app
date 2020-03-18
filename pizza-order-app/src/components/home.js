@@ -7,6 +7,7 @@ function Home() {
     const history = useHistory()
 
     const handleClick = () => {
+        //history used to perserve redux state between pages
         history.push('/user')
     }
     return (
